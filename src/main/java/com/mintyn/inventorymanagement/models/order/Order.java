@@ -12,6 +12,7 @@ import lombok.*;
 public class Order {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String customerName;
