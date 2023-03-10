@@ -1,7 +1,7 @@
 package com.mintyn.inventorymanagement.models.order;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import com.mintyn.inventorymanagement.models.orderItem.OrderItem;
+import jakarta.persistence.*;
 import lombok.*;
 
 @NoArgsConstructor
@@ -18,5 +18,6 @@ public class Order {
 
     private String customerPhoneNumber;
 
-    private String orderItems;
+    @ManyToOne
+    private OrderItem orderItems;
 }
