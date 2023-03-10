@@ -1,8 +1,9 @@
 package com.mintyn.inventorymanagement.models.order;
 
-import com.mintyn.inventorymanagement.models.orderItem.OrderItem;
+import com.mintyn.inventorymanagement.models.product.Product;
 import jakarta.persistence.*;
 import lombok.*;
+
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -13,12 +14,17 @@ public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
+    @Column(nullable = false)
+    private int customerId;
+
+    @Column(nullable = false)
     private String customerName;
 
+    @Column(nullable = false)
     private String customerPhoneNumber;
 
-    @ManyToOne
-    private OrderItem orderItems;
+    @ManyToOne(optional = false)
+    private Product product;
 }
