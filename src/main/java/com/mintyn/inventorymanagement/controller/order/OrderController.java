@@ -1,6 +1,5 @@
 package com.mintyn.inventorymanagement.controller.order;
 
-
 import com.mintyn.inventorymanagement.dto.OrderReport;
 import com.mintyn.inventorymanagement.exception.OutOfStockException;
 import com.mintyn.inventorymanagement.models.order.OrderItem;
@@ -25,10 +24,10 @@ public class OrderController {
     private OrderServiceImplementation orderServiceImplementation;
 
     @Autowired
-    private OrderReportRepository orderReportRepository;
+    OrderReportRepository orderReportRepository;
 
     @Autowired
-    private OrderRepository orderRepository;
+    OrderRepository orderRepository;
 
     @Autowired
     private ReportService reportService;
@@ -45,8 +44,7 @@ public class OrderController {
     }
 
     @GetMapping("/reports")
-    public List<OrderReport> getOrderReport(
-            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
+    public List<OrderReport> getOrderReport(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
         return reportService.generateOrderReport(startDate, endDate);
     }
