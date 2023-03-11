@@ -4,27 +4,34 @@ import com.mintyn.inventorymanagement.models.product.Product;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
+
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Getter
 @Setter
-public class Order {
+public class OrderItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
-    @Column(nullable = false)
-    private int customerId;
 
-    @Column(nullable = false)
+    private int productId;
+
+    private int quantity;
+
+    private LocalDate orderDate;
+
     private String customerName;
 
-    @Column(nullable = false)
-    private String customerPhoneNumber;
+    private String productName;
 
-    @ManyToOne(optional = false)
-    private Product product;
+    private double totalPrice;
+
+    private int customerId;
+
+    private String customerPhoneNumber;
 }
