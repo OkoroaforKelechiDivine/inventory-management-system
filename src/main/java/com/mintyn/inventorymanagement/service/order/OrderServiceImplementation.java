@@ -20,7 +20,7 @@ public class OrderServiceImplementation implements OrderService{
     private OrderRepository orderRepository;
 
     @Autowired
-    private KafkaTemplate<String, OrderItem> kafkaTemplate;
+    KafkaTemplate<String, OrderItem> kafkaTemplate;
 
     @Autowired
     private OrderProducer orderProducer;
@@ -35,10 +35,10 @@ public class OrderServiceImplementation implements OrderService{
     public OrderItem createOrder(OrderRequest orderRequest) throws Exception {
             Product product = productService.getProductById(orderRequest.getProductId());
             if (product == null) {
-                throw new NullPointerException("Product quantity is not found");
+                throw new NullPointerException("Product quantity is not found.");
             }
             if (product.getStock() < orderRequest.getQuantity()){
-                throw new OutOfStockException(("Product with " + product.getName() + " is outta Stock."));
+                throw new OutOfStockException(("Product with id " + product.getId() + " is outta Stock."));
             }
             product.setStock(product.getStock() - orderRequest.getQuantity());
             productRepository.save(product);
@@ -52,8 +52,8 @@ public class OrderServiceImplementation implements OrderService{
             orderItem.setCustomerPhoneNumber(orderRequest.getCustomerPhoneNumber());
 
             // Publish order to Kafka for reporting
-        orderProducer.send(orderItem);
-        return orderRepository.save(orderItem);
+            orderProducer.send(orderItem);
+            return orderRepository.save(orderItem);
     }
 
     @Override
