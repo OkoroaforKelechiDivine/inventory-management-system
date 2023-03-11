@@ -10,6 +10,8 @@ import java.time.LocalDate;
 
 @NoArgsConstructor
 @Entity
+@Getter
+@Setter
 @AllArgsConstructor
 public class OrderReport {
 
