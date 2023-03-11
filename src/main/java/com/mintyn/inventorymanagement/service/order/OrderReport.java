@@ -10,6 +10,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderReport {
+
      private LocalDate date;
 
      private int totalOrders;
