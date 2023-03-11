@@ -37,7 +37,7 @@ public class ProductServiceImplementation implements ProductService{
 
     @Override
     public Product updateProductPrice(int id, double price) {
-        Product product = productRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Product not found"));
+        Product product = productRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Product not found."));
         product.setOriginalPrice(product.getPrice());
         product.setPrice(price);
         productRepository.save(product);
