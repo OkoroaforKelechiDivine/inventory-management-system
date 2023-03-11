@@ -13,8 +13,6 @@ import java.util.Map;
 @Service
 public class ReportService {
     private Map<LocalDate, List<OrderItem>> ordersByDate = new HashMap<>();
-    private Map<String, Integer> productSales = new HashMap<>();
-    private Map<String, Double> productRevenue = new HashMap<>();
 
     public void processOrder(OrderItem orderItem) {
         LocalDate orderDate = orderItem.getOrderDate();
@@ -30,10 +28,8 @@ public class ReportService {
 
     public List<OrderReport> generateOrderReport(LocalDate startDate, LocalDate endDate) {
         List<OrderReport> report = new ArrayList<>();
-
         for (LocalDate date = startDate; date.isBefore(endDate); date = date.plusDays(1)) {
             List<OrderItem> orderItems = ordersByDate.get(date);
-
             if (orderItems != null) {
                 int totalOrders = orderItems.size();
                 double totalAmount = orderItems.stream().mapToDouble(OrderItem::getTotalPrice).sum();
@@ -42,7 +38,6 @@ public class ReportService {
                 report.add(new OrderReport(date, 0, 0.0));
             }
         }
-
         return report;
     }
 }
