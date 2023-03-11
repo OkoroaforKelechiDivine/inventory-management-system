@@ -63,7 +63,7 @@ public class OrderServiceImplementation implements OrderService{
     }
 
     @Override
-    public OrderItem getOrderById(int id) {
-        return orderRepository.findById(id).orElseThrow(() -> new RuntimeException("Couldn't find order with id " + id));
+    public OrderItem getOrderById(int id) throws NotFoundException {
+        return orderRepository.findById(id).orElseThrow(() -> new NotFoundException("Couldn't find order with id " + id));
     }
 }
