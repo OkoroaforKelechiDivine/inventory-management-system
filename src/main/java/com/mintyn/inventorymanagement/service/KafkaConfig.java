@@ -1,6 +1,6 @@
 package com.mintyn.inventorymanagement.service;
 
-import com.mintyn.inventorymanagement.models.order.Order;
+import com.mintyn.inventorymanagement.models.order.OrderItem;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -17,12 +17,12 @@ import java.util.Map;
 public class KafkaConfig {
 
     @Bean
-    public KafkaTemplate<String, Order> kafkaTemplate() {
+    public KafkaTemplate<String, OrderItem> kafkaTemplate() {
         return new KafkaTemplate<>(producerFactory());
     }
 
     @Bean
-    public ProducerFactory<String, Order> producerFactory() {
+    public ProducerFactory<String, OrderItem> producerFactory() {
         return new DefaultKafkaProducerFactory<>(producerConfigs());
     }
 

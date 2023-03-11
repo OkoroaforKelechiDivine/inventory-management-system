@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.aspectj.lang.annotation.DeclareMixin;
 
 import java.math.BigDecimal;
 
@@ -19,14 +20,15 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
-    private BigDecimal price;
+    private double price;
 
-    @Column(nullable = false)
     private int stock;
 
+    private int quantity;
+
     private String description;
+
+    private double originalPrice;
 }
