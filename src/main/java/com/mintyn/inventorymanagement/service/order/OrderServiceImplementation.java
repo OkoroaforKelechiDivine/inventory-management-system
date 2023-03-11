@@ -1,5 +1,6 @@
 package com.mintyn.inventorymanagement.service.order;
 
+import com.mintyn.inventorymanagement.exception.NotFoundException;
 import com.mintyn.inventorymanagement.exception.OutOfStockException;
 import com.mintyn.inventorymanagement.models.order.OrderItem;
 import com.mintyn.inventorymanagement.models.order.OrderRequest;
@@ -35,7 +36,7 @@ public class OrderServiceImplementation implements OrderService{
     public OrderItem createOrder(OrderRequest orderRequest) throws Exception {
             Product product = productService.getProductById(orderRequest.getProductId());
             if (product == null) {
-                throw new NullPointerException("Product quantity is not found.");
+                throw new NotFoundException("Product quantity is not found.");
             }
             if (product.getStock() < orderRequest.getQuantity()){
                 throw new OutOfStockException(("Product with id " + product.getId() + " is outta Stock."));
