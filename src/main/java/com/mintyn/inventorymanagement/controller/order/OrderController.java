@@ -44,8 +44,7 @@ public class OrderController {
     }
 
     @GetMapping("/reports")
-    public List<OrderReport> getOrderReport(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
-            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
+    public List<OrderReport> getOrderReport(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate, @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
         return reportService.generateOrderReport(startDate, endDate);
     }
 }
