@@ -1,5 +1,4 @@
-package com.mintyn.inventorymanagement.dto;
-
+package com.mintyn.inventorymanagement.models.order;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,25 +8,26 @@ import lombok.*;
 
 import java.time.LocalDate;
 
-
 @NoArgsConstructor
 @Entity
+@Getter
+@Setter
 @AllArgsConstructor
 public class OrderReport {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     private LocalDate date;
 
-    private int totalQuantity;
+    private int totalOrder;
 
-    private double totalValue;
+    private double totalOrderAmount;
 
-    public OrderReport(LocalDate date, int totalQuantity, double totalValue) {
+    public OrderReport(LocalDate date, int totalOrder, double totalOrderAmount) {
         this.date = date;
-        this.totalQuantity = totalQuantity;
-        this.totalValue = totalValue;
+        this.totalOrder = totalOrder;
+        this.totalOrderAmount = totalOrderAmount;
     }
 }

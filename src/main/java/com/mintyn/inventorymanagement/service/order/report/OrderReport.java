@@ -1,4 +1,4 @@
-package com.mintyn.inventorymanagement.service.order;
+package com.mintyn.inventorymanagement.service.order.report;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,6 +10,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderReport {
+
      private LocalDate date;
 
      private int totalOrders;

@@ -32,12 +32,12 @@ public class ProductServiceImplementation implements ProductService{
     }
 
     public Product getProductById(int productId)  {
-        return productRepository.findById(productId).orElseThrow(() -> new NoSuchElementException("Product with id " + productId + "not found"));
+        return productRepository.findById(productId).orElseThrow(() -> new NoSuchElementException("Product with id " + productId + " not found"));
     }
 
     @Override
     public Product updateProductPrice(int id, double price) {
-        Product product = productRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Product not found"));
+        Product product = productRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Product not found."));
         product.setOriginalPrice(product.getPrice());
         product.setPrice(price);
         productRepository.save(product);

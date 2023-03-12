@@ -5,9 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.aspectj.lang.annotation.DeclareMixin;
-
-import java.math.BigDecimal;
 
 @NoArgsConstructor
 @AllArgsConstructor

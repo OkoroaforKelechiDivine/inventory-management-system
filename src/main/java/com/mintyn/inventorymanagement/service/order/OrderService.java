@@ -1,5 +1,6 @@
 package com.mintyn.inventorymanagement.service.order;
 
+import com.mintyn.inventorymanagement.exception.NotFoundException;
 import com.mintyn.inventorymanagement.models.order.OrderItem;
 import com.mintyn.inventorymanagement.models.order.OrderRequest;
 
@@ -11,5 +12,5 @@ public interface OrderService {
 
     List<OrderItem> getAllOrders();
 
-    OrderItem getOrderById(int id);
+    OrderItem getOrderById(int id) throws NotFoundException;
 }

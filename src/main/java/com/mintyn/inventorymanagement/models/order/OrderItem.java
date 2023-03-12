@@ -1,11 +1,9 @@
 package com.mintyn.inventorymanagement.models.order;
 
-import com.mintyn.inventorymanagement.models.product.Product;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
-
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,7 +15,6 @@ public class OrderItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
 
     private int productId;
 

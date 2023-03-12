@@ -1,14 +1,13 @@
 package com.mintyn.inventorymanagement.controller.order;
 
-
-import com.mintyn.inventorymanagement.dto.OrderReport;
+import com.mintyn.inventorymanagement.models.order.OrderReport;
 import com.mintyn.inventorymanagement.exception.OutOfStockException;
 import com.mintyn.inventorymanagement.models.order.OrderItem;
 import com.mintyn.inventorymanagement.models.order.OrderRequest;
 import com.mintyn.inventorymanagement.repository.order.OrderReportRepository;
 import com.mintyn.inventorymanagement.repository.order.OrderRepository;
 import com.mintyn.inventorymanagement.service.order.OrderServiceImplementation;
-import com.mintyn.inventorymanagement.service.order.ReportService;
+import com.mintyn.inventorymanagement.service.order.report.ReportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
@@ -25,10 +24,10 @@ public class OrderController {
     private OrderServiceImplementation orderServiceImplementation;
 
     @Autowired
-    private OrderReportRepository orderReportRepository;
+    OrderReportRepository orderReportRepository;
 
     @Autowired
-    private OrderRepository orderRepository;
+    OrderRepository orderRepository;
 
     @Autowired
     private ReportService reportService;
@@ -45,9 +44,7 @@ public class OrderController {
     }
 
     @GetMapping("/reports")
-    public List<OrderReport> getOrderReport(
-            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
-            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
+    public List<OrderReport> getOrderReport(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate, @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
         return reportService.generateOrderReport(startDate, endDate);
     }
 }

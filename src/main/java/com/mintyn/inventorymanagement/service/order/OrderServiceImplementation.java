@@ -1,11 +1,13 @@
 package com.mintyn.inventorymanagement.service.order;
 
+import com.mintyn.inventorymanagement.exception.NotFoundException;
 import com.mintyn.inventorymanagement.exception.OutOfStockException;
 import com.mintyn.inventorymanagement.models.order.OrderItem;
 import com.mintyn.inventorymanagement.models.order.OrderRequest;
 import com.mintyn.inventorymanagement.models.product.Product;
 import com.mintyn.inventorymanagement.repository.order.OrderRepository;
 import com.mintyn.inventorymanagement.repository.product.ProductRepository;
+import com.mintyn.inventorymanagement.service.order.kafkaConfig.OrderProducer;
 import com.mintyn.inventorymanagement.service.product.ProductServiceImplementation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -20,7 +22,7 @@ public class OrderServiceImplementation implements OrderService{
     private OrderRepository orderRepository;
 
     @Autowired
-    private KafkaTemplate<String, OrderItem> kafkaTemplate;
+    KafkaTemplate<String, OrderItem> kafkaTemplate;
 
     @Autowired
     private OrderProducer orderProducer;
@@ -35,10 +37,10 @@ public class OrderServiceImplementation implements OrderService{
     public OrderItem createOrder(OrderRequest orderRequest) throws Exception {
             Product product = productService.getProductById(orderRequest.getProductId());
             if (product == null) {
-                throw new NullPointerException("Product quantity is not found");
+                throw new NotFoundException("Product quantity is not found.");
             }
             if (product.getStock() < orderRequest.getQuantity()){
-                throw new OutOfStockException(("Product with " + product.getName() + " is outta Stock."));
+                throw new OutOfStockException(("Product with id " + product.getId() + " is outta Stock."));
             }
             product.setStock(product.getStock() - orderRequest.getQuantity());
             productRepository.save(product);
@@ -52,8 +54,8 @@ public class OrderServiceImplementation implements OrderService{
             orderItem.setCustomerPhoneNumber(orderRequest.getCustomerPhoneNumber());
 
             // Publish order to Kafka for reporting
-        orderProducer.send(orderItem);
-        return orderRepository.save(orderItem);
+            orderProducer.sendMessage(orderItem);
+            return orderRepository.save(orderItem);
     }
 
     @Override
@@ -62,7 +64,7 @@ public class OrderServiceImplementation implements OrderService{
     }
 
     @Override
-    public OrderItem getOrderById(int id) {
-        return orderRepository.findById(id).orElseThrow(() -> new RuntimeException("Couldn't find order with id " + id));
+    public OrderItem getOrderById(int id) throws NotFoundException {
+        return orderRepository.findById(id).orElseThrow(() -> new NotFoundException("Couldn't find order with id " + id));
     }
 }
