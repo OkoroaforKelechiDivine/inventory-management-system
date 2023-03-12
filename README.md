@@ -26,7 +26,15 @@ To build and run the application, follow these steps:
 ✔️ Run the application:</br>
    ⚡```java -jar target/inventory-management-system.jar```
 
-Open a web browser and go to http://localhost:8080 to see the application in action
+✔️ Open a web browser and go to http://localhost:8080 to see the application in action
+
+# Features
+This application includes the following features:
+
+&larr;RESTful API endpoints for retrieving and updating data
+&larr;Spring Data JPA for database access
+&larr;Thymeleaf templates for rendering HTML pages
+&larr;Spring Security for authentication and authorization
 
 ✔️ Java 11<br/>
 ✔️ Spring Boot<br/>
