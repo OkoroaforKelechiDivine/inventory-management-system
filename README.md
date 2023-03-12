@@ -24,11 +24,16 @@ To build and run the application, follow these steps:
    ⚡```mvn clean install```
 
 ✔️ Run the application:</br>
-   ⚡```java -jar target/inventory-management-system.jar```
+   ⚡
+   ```
+   {
+        java -jar target/inventory-management-system.jar
+   }
+   ```
 
 ✔️ Open a web browser and go to http://localhost:8080 to see the application in action
 
-# Features
+# Features 🌟
 This application includes the following features:
 
 &rarr; RESTful API endpoints for creating, retrieving and updating data</br>
@@ -36,6 +41,7 @@ This application includes the following features:
 &rarr; Kafka for Order creation payload and getting an Order report</br>
 &rarr; Springboot testing
 
+# TECHNOLOGIES USED 🔧
 ✔️ Java 11<br/>
 ✔️ Spring Boot<br/>
 ✔️ Spring Data JPA<br/>
