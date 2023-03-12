@@ -26,9 +26,7 @@ To build and run the application, follow these steps:
 ✔️ Run the application:</br>
    ⚡
    ```
-   [
-       java -jar target/inventory-management-system.jar
-   ]
+   java -jar target/inventory-management-system.jar
    ```
 
 ✔️ Open a web browser and go to http://localhost:8080 to see the application in action
