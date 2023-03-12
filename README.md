@@ -13,27 +13,23 @@ Maven 3.3 or higher
 To build and run the application, follow these steps:
 
 ✔️ Clone the repository with:</br>
-    ⚡
     ```
     git clone https://github.com/OkoroaforKelechiDivine/inventory-management-system
     ```
 
 
 ✔️ Navigate to the project directory:</br>
-    ⚡
     ```
     cd inventory-management-system
     ```
 
 
 ✔️ Build the application:</br>
-   ⚡
    ```
    mvn clean install
    ```
 
 ✔️ Run the application:</br>
-   ⚡
    ```
    java -jar target/inventory-management-system.jar
    ```
