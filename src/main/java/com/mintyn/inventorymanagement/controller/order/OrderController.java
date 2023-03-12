@@ -7,7 +7,7 @@ import com.mintyn.inventorymanagement.models.order.OrderRequest;
 import com.mintyn.inventorymanagement.repository.order.OrderReportRepository;
 import com.mintyn.inventorymanagement.repository.order.OrderRepository;
 import com.mintyn.inventorymanagement.service.order.OrderServiceImplementation;
-import com.mintyn.inventorymanagement.service.order.ReportService;
+import com.mintyn.inventorymanagement.service.order.report.ReportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;

@@ -21,13 +21,13 @@ public class OrderReport {
 
     private LocalDate date;
 
-    private int totalQuantity;
+    private int totalOrder;
 
-    private double totalValue;
+    private double totalOrderAmount;
 
-    public OrderReport(LocalDate date, int totalQuantity, double totalValue) {
+    public OrderReport(LocalDate date, int totalOrder, double totalOrderAmount) {
         this.date = date;
-        this.totalQuantity = totalQuantity;
-        this.totalValue = totalValue;
+        this.totalOrder = totalOrder;
+        this.totalOrderAmount = totalOrderAmount;
     }
 }

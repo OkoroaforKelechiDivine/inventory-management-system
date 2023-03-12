@@ -1,4 +1,4 @@
-package com.mintyn.inventorymanagement.service.order;
+package com.mintyn.inventorymanagement.service.order.report;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

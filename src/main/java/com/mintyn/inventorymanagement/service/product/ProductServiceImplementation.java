@@ -32,7 +32,7 @@ public class ProductServiceImplementation implements ProductService{
     }
 
     public Product getProductById(int productId)  {
-        return productRepository.findById(productId).orElseThrow(() -> new NoSuchElementException("Product with id " + productId + "not found"));
+        return productRepository.findById(productId).orElseThrow(() -> new NoSuchElementException("Product with id " + productId + " not found"));
     }
 
     @Override

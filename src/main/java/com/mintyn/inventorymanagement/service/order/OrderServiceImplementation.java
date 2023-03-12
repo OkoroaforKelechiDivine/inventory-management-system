@@ -7,6 +7,7 @@ import com.mintyn.inventorymanagement.models.order.OrderRequest;
 import com.mintyn.inventorymanagement.models.product.Product;
 import com.mintyn.inventorymanagement.repository.order.OrderRepository;
 import com.mintyn.inventorymanagement.repository.product.ProductRepository;
+import com.mintyn.inventorymanagement.service.order.kafkaConfig.OrderProducer;
 import com.mintyn.inventorymanagement.service.product.ProductServiceImplementation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -53,7 +54,7 @@ public class OrderServiceImplementation implements OrderService{
             orderItem.setCustomerPhoneNumber(orderRequest.getCustomerPhoneNumber());
 
             // Publish order to Kafka for reporting
-            orderProducer.send(orderItem);
+            orderProducer.sendMessage(orderItem);
             return orderRepository.save(orderItem);
     }
 
