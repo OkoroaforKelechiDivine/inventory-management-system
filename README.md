@@ -12,8 +12,8 @@ Maven 3.3 or higher
 # Getting Started 👩‍💻
 To build and run the application, follow these steps:
 
-Clone the repository:</br>
-```https://github.com/OkoroaforKelechiDivine/inventory-management-system```
+Clone the repository with:</br>
+```git clone https://github.com/OkoroaforKelechiDivine/inventory-management-system```
 
 ✔️ Java 11<br/>
 ✔️ Spring Boot<br/>
