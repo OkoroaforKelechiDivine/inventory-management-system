@@ -1,6 +1,6 @@
 package com.mintyn.inventorymanagement.service.order.report;
 
-import com.mintyn.inventorymanagement.dto.OrderReport;
+import com.mintyn.inventorymanagement.models.order.OrderReport;
 import com.mintyn.inventorymanagement.models.order.OrderItem;
 import com.mintyn.inventorymanagement.repository.order.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
 package com.mintyn.inventorymanagement.controller.order;
 
-import com.mintyn.inventorymanagement.dto.OrderReport;
+import com.mintyn.inventorymanagement.models.order.OrderReport;
 import com.mintyn.inventorymanagement.exception.OutOfStockException;
 import com.mintyn.inventorymanagement.models.order.OrderItem;
 import com.mintyn.inventorymanagement.models.order.OrderRequest;
