@@ -9,7 +9,7 @@ To run this application, you will need:
 Java 8 or higher</br>
 Maven 3.3 or higher
 
-# Getting Started
+# Getting Started 👩‍💻
 To build and run the application, follow these steps:
 
 Clone the repository:
