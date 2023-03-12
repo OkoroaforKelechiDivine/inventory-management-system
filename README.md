@@ -31,10 +31,10 @@ To build and run the application, follow these steps:
 # Features
 This application includes the following features:
 
-&larr;RESTful API endpoints for retrieving and updating data
-&larr;Spring Data JPA for database access
-&larr;Thymeleaf templates for rendering HTML pages
-&larr;Spring Security for authentication and authorization
+&rarr;RESTful API endpoints for retrieving and updating data</br>
+&rarr;Spring Data JPA for database access</br>
+&rarr;Thymeleaf templates for rendering HTML pages</br>
+&rarr;Spring Security for authentication and authorization
 
 ✔️ Java 11<br/>
 ✔️ Spring Boot<br/>
