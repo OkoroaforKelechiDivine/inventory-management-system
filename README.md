@@ -16,7 +16,7 @@ Clone the repository with:</br>
 ⚡```git clone https://github.com/OkoroaforKelechiDivine/inventory-management-system```
 
 
-Navigate to the project directory:
+Navigate to the project directory:</br>
 ⚡```cd inventory-management-system```
 
 ✔️ Java 11<br/>
