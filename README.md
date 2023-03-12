@@ -23,7 +23,6 @@ To build and run the application, follow these steps:
     cd inventory-management-system
     ```
 
-
 ✔️ Build the application:</br>
    ```
    mvn clean install
@@ -37,7 +36,7 @@ To build and run the application, follow these steps:
 ✔️ Open a web browser and go to http://localhost:8080 to see the application in action
 
 # Features 🌟
-This application includes the following features:
+### This application includes the following features:
 
 &rarr; RESTful API endpoints for creating, retrieving and updating data</br>
 &rarr; Spring Data JPA for database access</br>
