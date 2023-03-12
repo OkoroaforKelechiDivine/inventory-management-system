@@ -19,6 +19,13 @@ Clone the repository with:</br>
 Navigate to the project directory:</br>
 ⚡```cd inventory-management-system```
 
+
+Build the application:</br>
+⚡```mvn clean install```
+
+Run the application:
+⚡```java -jar target/inventory-management-system.jar```
+
 ✔️ Java 11<br/>
 ✔️ Spring Boot<br/>
 ✔️ Spring Data JPA<br/>
