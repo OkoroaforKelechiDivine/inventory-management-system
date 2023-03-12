@@ -23,8 +23,10 @@ Navigate to the project directory:</br>
 Build the application:</br>
 ⚡```mvn clean install```
 
-Run the application:
+Run the application:</br>
 ⚡```java -jar target/inventory-management-system.jar```
+
+Open a web browser and go to http://localhost:8080 to see the application in action
 
 ✔️ Java 11<br/>
 ✔️ Spring Boot<br/>
