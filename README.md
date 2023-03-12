@@ -31,10 +31,10 @@ To build and run the application, follow these steps:
 # Features
 This application includes the following features:
 
-&rarr;RESTful API endpoints for retrieving and updating data</br>
-&rarr;Spring Data JPA for database access</br>
-&rarr;Thymeleaf templates for rendering HTML pages</br>
-&rarr;Spring Security for authentication and authorization
+&rarr; RESTful API endpoints for creating, retrieving and updating data</br>
+&rarr; Spring Data JPA for database access</br>
+&rarr; Kafka for Order creation payload and getting an Order report</br>
+&rarr; Spring Security for authentication and authorization
 
 ✔️ Java 11<br/>
 ✔️ Spring Boot<br/>
