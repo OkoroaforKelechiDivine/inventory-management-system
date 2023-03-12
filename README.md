@@ -12,7 +12,7 @@ Maven 3.3 or higher
 # Getting Started 👩‍💻
 To build and run the application, follow these steps:
 
-Clone the repository:
+```Clone the repository:```
 
 ✔️ Java 11<br/>
 ✔️ Spring Boot<br/>
