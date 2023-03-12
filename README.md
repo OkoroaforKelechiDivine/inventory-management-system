@@ -9,6 +9,11 @@ To run this application, you will need:
 Java 8 or higher
 Maven 3.3 or higher
 
+### Getting Started
+To build and run the application, follow these steps:
+
+Clone the repository:
+
 ✔️ Java 11<br/>
 ✔️ Spring Boot<br/>
 ✔️ Spring Data JPA<br/>
